@@ -2,7 +2,8 @@ import { NgForOf, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { useMutationResult } from '@ngneat/query';
 import { SubscribeModule } from '@ngneat/subscribe';
-import { BehaviorSubject, switchMap } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { TodosService } from '../todos.service';
 

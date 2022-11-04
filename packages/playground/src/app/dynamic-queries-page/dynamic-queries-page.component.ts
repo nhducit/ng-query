@@ -1,9 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BehaviorSubject, combineLatest, switchMap } from 'rxjs';
+import { BehaviorSubject, combineLatest } from 'rxjs';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
+// import { BehaviorSubject, combineLatest } from 'rxjs';
+// import { CommonModule } from '@angular/common';
 import { TodosService } from '../todos.service';
 import { SubscribeModule } from '@ngneat/subscribe';
 import { SpinnerComponent } from '../spinner/spinner.component';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'ng-query-dynamic-queries-page',

@@ -5,7 +5,8 @@ import {
   QueryObserverResult,
   QueryOptions,
 } from '@tanstack/query-core';
-import { Subscription, take, tap } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { take, tap } from 'rxjs/operators';
 import { baseQuery } from './base-query';
 import { ObservableQueryFn } from './types';
 
@@ -24,6 +25,7 @@ export function fromQueryFn<TQueryFnData>(
         .pipe(
           take(1),
           tap({
+            // @ts-ignore
             unsubscribe: () => {
               client.cancelQueries(queryKey);
               sourceSubscription = null;

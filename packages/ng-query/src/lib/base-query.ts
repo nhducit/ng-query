@@ -6,7 +6,8 @@ import {
   QueryObserverOptions,
   QueryObserverResult,
 } from '@tanstack/query-core';
-import { Observable, shareReplay } from 'rxjs';
+import { Observable } from 'rxjs';
+import { shareReplay } from 'rxjs/operators';
 import { SUBSCRIPTION } from './utils';
 
 export function baseQuery<

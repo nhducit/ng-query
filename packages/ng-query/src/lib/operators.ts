@@ -1,12 +1,6 @@
 import { QueryObserverResult } from '@tanstack/query-core';
-import {
-  distinctUntilChanged,
-  filter,
-  map,
-  Observable,
-  OperatorFunction,
-  pipe,
-} from 'rxjs';
+import { Observable, OperatorFunction, pipe } from 'rxjs';
+import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 
 export function mapResultData<T extends QueryObserverResult, R>(
   mapFn: (data: NonNullable<T['data']>) => R

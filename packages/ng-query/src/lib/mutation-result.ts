@@ -1,4 +1,5 @@
-import { BehaviorSubject, MonoTypeOperatorFunction, pipe, tap } from 'rxjs';
+import { BehaviorSubject, MonoTypeOperatorFunction, pipe } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 class MutationResult<Response = unknown, Error = unknown> {
   data: Response | null = null;
@@ -38,6 +39,7 @@ export function useMutationResult<Response, Error = unknown>(
     result$: store.asObservable(),
     track<T extends Response>(): MonoTypeOperatorFunction<T> {
       return pipe(
+        // @ts-ignore
         tap({
           next(data) {
             update(data);
