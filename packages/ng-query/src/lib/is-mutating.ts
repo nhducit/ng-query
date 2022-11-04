@@ -5,7 +5,8 @@ import {
   notifyManager,
   parseMutationFilterArgs,
 } from '@tanstack/query-core';
-import { distinctUntilChanged, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
+import { distinctUntilChanged } from 'rxjs/operators';
 
 import { QueryClient } from './query-client';
 
